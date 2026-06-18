@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
 
+<!--============================= CSS =============================-->
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -9,11 +10,14 @@
   <meta content="Portofolio profesional Berto Juni Krisnanto, Web Developer dan CEO PT Asthana Cipta Mandiri yang berlokasi di Yogyakarta. Ahli dalam pengembangan website, sistem informasi, dan solusi digital." name="description">
   <meta content="Berto Juni Krisnanto, Web Developer, CEO PT Asthana Cipta Mandiri, Pengembang Web Yogyakarta, Laravel Developer, Digital Solutions" name="keywords">
 
+  <!-- Favicons -->
   <link href="assets/img/pict.png" rel="icon">
   <link href="assets/img/pict.png" rel="apple-touch-icon">
 
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+  <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -21,72 +25,59 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- CUSTOM CLEAN & MODERN CSS OVERRIDES -->
   <style>
     :root {
-        --primary-cyan: #06b6d4;
-        --primary-blue: #3b82f6;
-        --gradient-primary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-        --glass-bg: rgba(255, 255, 255, 0.75);
-        --glass-border: rgba(255, 255, 255, 0.6);
-        --dark-glass: rgba(15, 23, 42, 0.85);
+        --primary: #2563eb; /* Modern Blue */
+        --primary-hover: #1d4ed8;
+        --bg-body: #f8fafc; /* Very light slate gray */
+        --bg-card: #ffffff;
+        --text-main: #1e293b; /* Dark slate text */
+        --text-muted: #64748b;
+        --border-color: #e2e8f0;
     }
 
     body {
-        background-color: #f8fafc;
-        background-image: radial-gradient(#cbd5e1 2px, transparent 2px);
-        background-size: 30px 30px;
+        background-color: var(--bg-body);
         font-family: 'Poppins', sans-serif;
+        color: var(--text-main);
     }
 
-    /* Fixed Background Blobs */
-    .bg-blob {
-        position: fixed;
-        border-radius: 50%;
-        filter: blur(80px);
-        z-index: -1;
-        opacity: 0.5;
-    }
-    .blob-1 { top: -10%; left: -10%; width: 500px; height: 500px; background: rgba(6, 182, 212, 0.3); }
-    .blob-2 { bottom: -10%; right: -5%; width: 600px; height: 600px; background: rgba(59, 130, 246, 0.3); }
-
-    /* Override Sidebar (Header) to Dark Glass */
+    /* Override Sidebar (Header) to Sleek Dark Slate */
     #header {
-        background: var(--dark-glass) !important;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-right: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 5px 0 25px rgba(0,0,0,0.1);
+        background: #0f172a !important; 
+        border-right: none;
+        box-shadow: 4px 0 15px rgba(0,0,0,0.03);
     }
 
     #header .profile img {
-        border: 4px solid rgba(255, 255, 255, 0.2);
-        padding: 5px;
+        border: 4px solid #334155;
+        padding: 4px;
     }
 
     .nav-menu a:hover, .nav-menu .active, .nav-menu .active:focus, .nav-menu li:hover > a {
-        color: var(--primary-cyan) !important;
+        color: #38bdf8 !important; /* Light blue accent for dark sidebar */
     }
     .nav-menu a:hover i, .nav-menu .active i, .nav-menu .active:focus i, .nav-menu li:hover > a i {
-        color: var(--primary-cyan) !important;
+        color: #38bdf8 !important;
     }
 
-    /* Glossy Cards Utility */
-    .glossy-card {
-        background: var(--glass-bg);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid var(--glass-border);
-        border-radius: 24px;
+    /* Clean Card Utility */
+    .clean-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
         padding: 30px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .glossy-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    .clean-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
     }
 
     /* Override Section Backgrounds */
@@ -94,128 +85,182 @@
     .section-bg { background: transparent !important; }
     
     .section-title h2 {
-        color: #1e293b;
+        color: var(--text-main);
         font-weight: 800;
+        position: relative;
+        padding-bottom: 15px;
     }
+    
     .section-title h2::after {
-        background: var(--gradient-primary);
+        content: '';
+        position: absolute;
+        display: block;
+        width: 50px;
+        height: 4px;
+        background: var(--primary);
+        bottom: 0;
+        left: 0;
+        border-radius: 4px;
+    }
+
+    .section-title p {
+        color: var(--text-muted);
     }
 
     /* About Section */
     .about img {
-        border-radius: 24px !important;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        border: 5px solid white;
+        border-radius: 16px !important;
+        box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+    }
+    .about ul i {
+        color: var(--primary) !important;
+        font-weight: bold;
     }
     
     /* Skills Section */
     .progress {
-        background: rgba(255,255,255,0.5);
-        border: 1px solid rgba(255,255,255,0.8);
-        border-radius: 50px;
-        height: 15px;
+        background: #f1f5f9;
+        border: none;
+        border-radius: 8px;
+        height: 12px;
         overflow: visible;
-        box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+        margin-bottom: 25px;
     }
     .progress-bar {
-        background: var(--gradient-primary);
-        border-radius: 50px;
-        box-shadow: 0 3px 10px rgba(6, 182, 212, 0.4);
+        background: var(--primary);
+        border-radius: 8px;
     }
-    .skill .val { font-weight: 700; color: var(--primary-blue); }
+    .skill {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: var(--text-main);
+    }
+    .skill .val { color: var(--primary); }
 
     /* Resume Section */
     .resume-title {
-        color: #1e293b;
+        color: var(--text-main);
         font-weight: 700;
+        margin-bottom: 20px;
     }
     .resume-item {
-        border-left: 2px solid var(--primary-cyan);
+        border-left: 2px solid #cbd5e1;
         position: relative;
-        padding: 0 0 20px 20px;
+        padding: 0 0 25px 20px;
     }
     .resume-item::before {
         content: "";
         position: absolute;
-        width: 16px;
-        height: 16px;
-        border-radius: 50px;
-        left: -9px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        left: -8px;
         top: 0;
-        background: var(--glass-bg);
-        border: 2px solid var(--primary-cyan);
-        box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+        background: #ffffff;
+        border: 2px solid var(--primary);
+    }
+    .resume-item h4 {
+        color: var(--text-main);
+        font-weight: 600;
+    }
+    .resume-item h5 {
+        background: #f1f5f9;
+        padding: 5px 12px;
+        display: inline-block;
+        font-weight: 600;
+        border-radius: 6px;
+        color: var(--text-main);
+        font-size: 0.85rem;
+    }
+    .resume-item em.duration {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        margin-left: 10px;
+        font-style: normal;
+        font-weight: 500;
+    }
+    .resume-item em.badge-type {
+        background: #e0e7ff;
+        color: var(--primary);
+        padding: 3px 10px;
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 600;
+        margin-left: 8px;
     }
 
     /* Portfolio Section */
     #portfolio-flters li {
-        background: var(--glass-bg);
-        backdrop-filter: blur(10px);
-        border: 1px solid var(--glass-border);
-        border-radius: 50px;
-        padding: 8px 25px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        background: #ffffff;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 8px 20px;
+        font-weight: 500;
+        color: var(--text-muted);
+        transition: all 0.2s ease;
+        margin: 0 5px;
     }
     #portfolio-flters li:hover, #portfolio-flters li.filter-active {
-        background: var(--gradient-primary);
-        color: white;
-        border-color: transparent;
-        box-shadow: 0 8px 20px rgba(6, 182, 212, 0.4);
+        background: var(--primary);
+        color: #ffffff;
+        border-color: var(--primary);
     }
     .portfolio-wrap {
-        border-radius: 20px;
+        border-radius: 12px;
         overflow: hidden;
-        border: 1px solid var(--glass-border);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        border: 1px solid var(--border-color);
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
     }
 
     /* Contact Section */
-    .contact .info, .contact .card-body {
-        padding: 0; /* Resetting template padding to let glossy-card take over */
-        background: transparent;
-        box-shadow: none;
-    }
     .contact .info i {
-        background: var(--gradient-primary);
-        color: white;
-        box-shadow: 0 5px 15px rgba(6, 182, 212, 0.3);
+        background: #e0e7ff;
+        color: var(--primary);
+        border-radius: 8px;
     }
     .form-control {
-        background: rgba(255,255,255,0.6);
-        border: 1px solid rgba(255,255,255,0.8);
-        border-radius: 12px;
-        padding: 12px 15px;
-        backdrop-filter: blur(5px);
+        background: #f1f5f9;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        padding: 12px 16px;
+        color: var(--text-main);
     }
     .form-control:focus {
-        background: #fff;
-        border-color: var(--primary-cyan);
-        box-shadow: 0 0 0 0.25rem rgba(6, 182, 212, 0.25);
+        background: #ffffff;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
     }
-    .btn-glossy-primary {
-        background: var(--gradient-primary);
+    
+    /* Button Clean */
+    .btn-modern {
+        background: var(--primary);
         color: white !important;
-        font-weight: 700;
-        padding: 12px 35px;
-        border-radius: 50px !important;
+        font-weight: 600;
+        padding: 12px 32px;
+        border-radius: 8px;
         border: none;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+        transition: all 0.2s ease;
     }
-    .btn-glossy-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 30px rgba(6, 182, 212, 0.6);
+    .btn-modern:hover {
+        background: var(--primary-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
     }
   </style>
 </head>
+<!--============================= END =============================-->
+
+<!--============================= CONTENT =============================-->
 <body>
 
-  <div class="bg-blob blob-1"></div>
-  <div class="bg-blob blob-2"></div>
-
+  <!-- ======= Mobile nav toggle button ======= -->
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <!-- ======= END ======= -->
+
+  <!-- ======= Header ======= -->
   <header id="header">
     <div class="d-flex flex-column">
       <div class="profile">
@@ -241,14 +286,20 @@
       </nav>
     </div>
   </header>
+  <!-- ======= END ======= -->
+
+  <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>Berto Juni Krisnanto</h1>
       <p>I'm <span class="typed" data-typed-items="Web Developer, CEO PT. Asthana Cipta Mandiri"></span></p>
     </div>
   </section>
+  <!-- ======= END ======= -->
+
   <main id="main">
 
+    <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
 
@@ -259,29 +310,29 @@
           </p>
         </div>
 
-        <div class="row">
+        <div class="row mt-4">
           <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/pict.jpg" class="img-fluid" alt="">
+            <img src="assets/img/pict.jpg" class="img-fluid w-100" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <div class="glossy-card h-100">
-                <h3 style="color: var(--primary-blue); font-weight: 800;">Web Developer & CEO</h3>
-                <p class="fst-italic text-muted mb-4">
+            <div class="clean-card h-100">
+                <h3 style="color: var(--text-main); font-weight: 700;">Web Developer & CEO</h3>
+                <p class="text-muted mb-4">
                   Memimpin pengembangan solusi web inovatif di PT Asthana Cipta Mandiri dengan keahlian teknis yang mendalam.
                 </p>
                 <div class="row">
                   <div class="col-lg-6">
-                    <ul>
-                      <li><i class="bi bi-chevron-right" style="color: var(--primary-cyan);"></i> <strong>Perusahaan:</strong> <span>PT Asthana Cipta Mandiri</span></li>
-                      <li><i class="bi bi-chevron-right" style="color: var(--primary-cyan);"></i> <strong>Tanggal Lahir:</strong> <span>7 Juni 1998</span></li>
-                      <li><i class="bi bi-chevron-right" style="color: var(--primary-cyan);"></i> <strong>No. Telp:</strong> <span>0895-42173-5441</span></li>
-                      <li><i class="bi bi-chevron-right" style="color: var(--primary-cyan);"></i> <strong>Kota:</strong> <span>DIY Yogyakarta</span></li>
+                    <ul class="list-unstyled">
+                      <li class="mb-3"><i class="bi bi-chevron-right me-2"></i> <strong>Perusahaan:</strong> PT Asthana Cipta Mandiri</li>
+                      <li class="mb-3"><i class="bi bi-chevron-right me-2"></i> <strong>Tanggal Lahir:</strong> 7 Juni 1998</li>
+                      <li class="mb-3"><i class="bi bi-chevron-right me-2"></i> <strong>No. Telp:</strong> 0895-42173-5441</li>
+                      <li class="mb-3"><i class="bi bi-chevron-right me-2"></i> <strong>Kota:</strong> DIY Yogyakarta</li>
                     </ul>
                   </div>
                   <div class="col-lg-6">
-                    <ul>
-                      <li><i class="bi bi-chevron-right" style="color: var(--primary-cyan);"></i> <strong>Umur:</strong> <span>28</span></li>
-                      <li><i class="bi bi-chevron-right" style="color: var(--primary-cyan);"></i> <strong>Email:</strong> <span>bertojunikrisnanto@gmail.com</span></li>
+                    <ul class="list-unstyled">
+                      <li class="mb-3"><i class="bi bi-chevron-right me-2"></i> <strong>Umur:</strong> 28 Tahun</li>
+                      <li class="mb-3"><i class="bi bi-chevron-right me-2"></i> <strong>Email:</strong> bertojunikrisnanto@gmail.com</li>
                     </ul>
                   </div>
                 </div>
@@ -290,75 +341,78 @@
         </div>
       </div>
     </section>
+    <!-- ======= END ======= -->
+
+    <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills">
       <div class="container">
         <div class="section-title">
           <h2>Skills</h2>
         </div>
-        <div class="row skills-content glossy-card">
+        <div class="row skills-content clean-card mt-4">
           
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="progress">
+          <div class="col-lg-6 pe-lg-4" data-aos="fade-up">
+            <div class="progress-wrap">
               <span class="skill">CSS <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
+              <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
-            <div class="progress">
+            <div class="progress-wrap">
               <span class="skill">Java Script <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
+              <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
-            <div class="progress">
+            <div class="progress-wrap">
               <span class="skill">PHP <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
+              <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
-            <div class="progress">
+            <div class="progress-wrap">
               <span class="skill">Code Igniter <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
+              <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
-            <div class="progress">
+            <div class="progress-wrap">
               <span class="skill">Laravel <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
+              <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
-            <div class="progress">
+            <div class="progress-wrap">
               <span class="skill">Vue JS <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
+              <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
           </div>
           
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="progress">
+          <div class="col-lg-6 ps-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="progress-wrap">
               <span class="skill">Adobe XD <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
+              <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
-            <div class="progress">
+            <div class="progress-wrap">
               <span class="skill">Figma <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
+              <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
-            <div class="progress">
+            <div class="progress-wrap">
               <span class="skill">Photoshop <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
+              <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
@@ -367,6 +421,9 @@
         </div>
       </div>
     </section>
+    <!-- ======= END ======= -->
+
+    <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
       <div class="container">
 
@@ -374,101 +431,101 @@
           <h2>Pengalaman</h2>
         </div>
 
-        <div class="row">
+        <div class="row mt-4">
           <div class="col-lg-6" data-aos="fade-up">
 
-            <div class="glossy-card mb-4">
+            <div class="clean-card mb-4">
                 <h3 class="resume-title">Pendidikan</h3>
                 <div class="resume-item pb-0">
-                  <p><em>Duduk di bangku perkuliahan di Universitas Ahmad Dahlan, dengan mengambil Studi Teknik Informatika, selama 4 Tahun. Selama studi saya mengambil konsentrasi di pengembangan web dan UI/UX design</em></p>
-                  <ul>
-                    <li>2017-2022</li>
+                  <p class="text-muted"><em>Duduk di bangku perkuliahan di Universitas Ahmad Dahlan, dengan mengambil Studi Teknik Informatika. Selama studi saya mengambil konsentrasi di pengembangan web dan UI/UX design.</em></p>
+                  <ul class="text-muted mt-3">
+                    <li>2017 - 2022</li>
                     <li>Universitas Ahmad Dahlan</li>
                     <li>Teknik Informatika</li>
                   </ul>
                 </div>
             </div>
 
-            <div class="glossy-card">
+            <div class="clean-card">
                 <h3 class="resume-title">Organisasi</h3>
                 <div class="resume-item">
                   <h4>Unit Kegiatan Bulutangkis UAD</h4>
                   <h5>2017</h5>
-                  <p>Jabatan: <em>Anggota</em></p>
-                  <p>Menjalin silaturahmi dengan sesama unit untuk melakukan program kerja yang sudah di rencanakan dengan baik.</p>
+                  <p class="mt-2 text-muted">Jabatan: <strong>Anggota</strong></p>
+                  <p class="text-muted">Menjalin silaturahmi dengan sesama unit untuk melakukan program kerja yang sudah direncanakan dengan baik.</p>
                 </div>
                 <div class="resume-item">
                   <h4>Malam Keakraban Teknik Informatika</h4>
                   <h5>2018</h5>
-                  <p>Jabatan: <em>Anggota Hubungan Masyarakat</em></p>
-                  <p>Membantu berkomunikasi dengan publik dan masyarkat sekitar, serta menambah pengetahuan mengenai berkomunikasi yang baik dan benar.</p>
+                  <p class="mt-2 text-muted">Jabatan: <strong>Anggota Hubungan Masyarakat</strong></p>
+                  <p class="text-muted">Membantu berkomunikasi dengan publik dan masyarkat sekitar, serta menambah pengetahuan mengenai berkomunikasi yang baik dan benar.</p>
                 </div>
                 <div class="resume-item">
                   <h4>Malam Keakraban Teknik Informatika</h4>
                   <h5>2019</h5>
-                  <p>Jabatan: <em>Ketua Kesehatan</em></p>
-                  <p>Menjalankan tugas untuk memberikan bantuan kesehatan kepada anggota dan peserta, serta mengelola divisi dengan baik dan benar.</p>
+                  <p class="mt-2 text-muted">Jabatan: <strong>Ketua Kesehatan</strong></p>
+                  <p class="text-muted">Menjalankan tugas untuk memberikan bantuan kesehatan kepada anggota dan peserta, serta mengelola divisi dengan baik dan benar.</p>
                 </div>
                 <div class="resume-item">
                   <h4>Kelompok Studi Web</h4>
                   <h5>2018 - 2020</h5>
-                  <p>Jabatan: <em>Anggota</em></p>
-                  <p>Memperluas ilmu pengetahuan mengenai website baik dari segi bahasa pemrograman, maupun pengembangannya.</p>
+                  <p class="mt-2 text-muted">Jabatan: <strong>Anggota</strong></p>
+                  <p class="text-muted">Memperluas ilmu pengetahuan mengenai website baik dari segi bahasa pemrograman, maupun pengembangannya.</p>
                 </div>
             </div>
             
           </div>
 
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="glossy-card h-100">
+          <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+            <div class="clean-card h-100">
                 <h3 class="resume-title">Karier Profesional</h3>
                 
                 <div class="resume-item">
                   <h4>PT. Asthana Cipta Mandiri</h4>
                   <h5>2025 - Sekarang</h5>
-                  <p><strong>CEO & Founder</strong> <em style="color: var(--primary-cyan);">Purnawaktu</em></p>
+                  <p class="mt-2 text-muted"><strong>CEO & Founder</strong> <em class="badge-type">Purnawaktu</em></p>
                 </div>
 
                 <div class="resume-item">
                   <h4>Astra Credit Companies</h4>
-                  <h5>2022 - 2025</h5><em style="color: var(--primary-blue);">3 Tahun 4 Bulan</em>
-                  <p>Front End Developer <em style="color: var(--primary-cyan);">Purnawaktu</em></p>
+                  <h5>2022 - 2025</h5> <em class="duration">3 Tahun 4 Bulan</em>
+                  <p class="mt-2 text-muted"><strong>Front End Developer</strong> <em class="badge-type">Purnawaktu</em></p>
                 </div>
 
                 <div class="resume-item">
                   <h4>Study Employee Perpustakaan</h4>
-                  <h5>2021</h5><em style="color: var(--primary-blue);">5 Bulan</em>
-                  <p>Cek Plagiatrisme <em style="color: var(--primary-cyan);">Paruh Waktu</em></p>
+                  <h5>2021</h5> <em class="duration">5 Bulan</em>
+                  <p class="mt-2 text-muted"><strong>Cek Plagiatrisme</strong> <em class="badge-type">Paruh Waktu</em></p>
                 </div>
 
                 <div class="resume-item">
                   <h4>G45, Sleman, Yogyakarta</h4>
-                  <h5>2021</h5><em style="color: var(--primary-blue);">3 Bulan</em>
-                  <p>Web Developer <em style="color: var(--primary-cyan);">Magang</em></p>
+                  <h5>2021</h5> <em class="duration">3 Bulan</em>
+                  <p class="mt-2 text-muted"><strong>Web Developer</strong> <em class="badge-type">Magang</em></p>
                 </div>
 
                 <div class="resume-item">
                   <h4>PT. Emka Mulia Kasih Group</h4>
-                  <h5>2020 - 2021</h5><em style="color: var(--primary-blue);">1 Tahun 1 Bulan</em>
-                  <p>Project Manager, Web Developer <em style="color: var(--primary-cyan);">Purnawaktu</em></p>
+                  <h5>2020 - 2021</h5> <em class="duration">1 Tahun 1 Bulan</em>
+                  <p class="mt-2 text-muted"><strong>Project Manager, Web Developer</strong> <em class="badge-type">Purnawaktu</em></p>
                 </div>
 
                 <div class="resume-item">
                   <h4>SMA N 1 Pleret, Bantul, Yogyakarta</h4>
-                  <h5>2020</h5><em style="color: var(--primary-blue);">2 Bulan</em>
-                  <p>Web Developer <em style="color: var(--primary-cyan);">Magang</em></p>
+                  <h5>2020</h5> <em class="duration">2 Bulan</em>
+                  <p class="mt-2 text-muted"><strong>Web Developer</strong> <em class="badge-type">Magang</em></p>
                 </div>
 
                 <div class="resume-item">
                   <h4>Asisten Praktikum</h4>
-                  <h5>2018 - 2022</h5><em style="color: var(--primary-blue);">4 Tahun 7 Bulan</em>
-                  <p>Trainer Mata Kuliah <em style="color: var(--primary-cyan);">Paruh Waktu</em></p>
+                  <h5>2018 - 2022</h5> <em class="duration">4 Tahun 7 Bulan</em>
+                  <p class="mt-2 text-muted"><strong>Trainer Mata Kuliah</strong> <em class="badge-type">Paruh Waktu</em></p>
                 </div>
 
                 <div class="resume-item">
                   <h4>Freelance</h4>
                   <h5>2018 - Sekarang</h5>
-                  <p>Project Manager, Front End <em style="color: var(--primary-cyan);">Pekerja Lepas</em></p>
+                  <p class="mt-2 text-muted"><strong>Project Manager, Front End</strong> <em class="badge-type">Pekerja Lepas</em></p>
                 </div>
             </div>
           </div>
@@ -476,6 +533,9 @@
         </div>
       </div>
     </section>
+    <!-- ======= END ======= -->
+
+    <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
 
@@ -484,7 +544,7 @@
           <p>Berikut adalah hasil project, UI/UX Design, dan Product yang saya buat. Hasil tersebut bisa dilihat di github dan bersifat open source.</p>
         </div>
 
-        <div class="row" data-aos="fade-up">
+        <div class="row mt-4" data-aos="fade-up">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters" class="mb-5">
               <li data-filter="*" class="filter-active">All</li>
@@ -495,6 +555,7 @@
           </div>
         </div>
 
+        <!-- PRODUCT -->
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
           
           <div class="col-lg-4 col-md-6 portfolio-item filter-product">
@@ -530,6 +591,7 @@
             </div>
           </div>
 
+          <!-- PROJECT -->
           <div class="col-lg-4 col-md-6 portfolio-item filter-project">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/project.jpg" class="img-fluid" alt="">
@@ -596,6 +658,7 @@
             </div>
           </div>
 
+          <!-- UI -->
           <div class="col-lg-4 col-md-6 portfolio-item filter-ui">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/ui.jpg" class="img-fluid" alt="">
@@ -611,6 +674,9 @@
 
       </div>
     </section>
+    <!-- ======= END ======= -->
+
+    <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container">
 
@@ -618,27 +684,27 @@
           <h2>Contact</h2>
         </div>
 
-        <div class="row" data-aos="fade-in">
+        <div class="row mt-4" data-aos="fade-in">
 
           <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info glossy-card w-100">
+            <div class="info clean-card w-100">
               <div class="email">
                 <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>bertojunikrisnanto@gmail.com</p>
+                <h4 class="fw-bold">Email:</h4>
+                <p class="text-muted">bertojunikrisnanto@gmail.com</p>
               </div>
 
               <div class="phone mt-4">
                 <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+62 895-42173-5441</p>
+                <h4 class="fw-bold">Call:</h4>
+                <p class="text-muted">+62 895-42173-5441</p>
               </div>
-              <iframe class="mt-4 rounded-3 border" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.804960886227!2d110.38664661540051!3d-7.81046047971423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5772204fc177%3A0x0!2zN8KwNDgnMzcuNyJTIDExMMKwMjMnMTkuOCJF!5e0!3m2!1sid!2sid!4v1664530678419!5m2!1sid!2sid" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+              <iframe class="mt-4 rounded-3 border w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.804960886227!2d110.38664661540051!3d-7.81046047971423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5772204fc177%3A0x0!2zN8KwNDgnMzcuNyJTIDExMMKwMjMnMTkuOCJF!5e0!3m2!1sid!2sid!4v1664530678419!5m2!1sid!2sid" frameborder="0" style="height: 290px;" allowfullscreen></iframe>
             </div>
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <div class="glossy-card w-100 p-4">
+            <div class="clean-card w-100 p-4 p-md-5">
               <form action="https://formspree.io/xknqpqpo" method="POST">
                 <div class="messages"></div>
                 <div class="controls">
@@ -661,10 +727,10 @@
                     </div>
                     <div class="form-group col-md-12 mb-4">
                       <label class="fw-bold text-muted mb-2" for="message">Pesan <span class="text-danger">*</span></label>
-                      <textarea name="message" placeholder="Pesan Untuk Saya..." rows="5" required="required" class="form-control"></textarea>
+                      <textarea name="message" placeholder="Pesan Untuk Saya..." rows="6" required="required" class="form-control"></textarea>
                     </div>
-                    <div class="col-md-12 text-center mt-3">
-                      <button type="submit" class="btn btn-glossy-primary"><i class="bi bi-send me-2"></i> Kirim Pesan</button>
+                    <div class="col-md-12 mt-2">
+                      <button type="submit" class="btn btn-modern w-100"><i class="bi bi-send me-2"></i> Kirim Pesan</button>
                     </div>
                   </div>
                 </div>
@@ -675,17 +741,23 @@
         </div>
       </div>
     </section>
-    </main>
+    <!-- ======= END ======= -->
 
+  </main>
+
+  <!-- ======= Footer ======= -->
   <footer id="footer" class="py-4" style="background: transparent; border-top: 1px solid rgba(0,0,0,0.05);">
     <div class="container">
-      <div class="copyright text-center text-muted fw-bold">
-        &copy; Copyright <strong><span style="color: var(--primary-cyan);">Berto Juni</span></strong>. All Rights Reserved
+      <div class="copyright text-center text-muted">
+        &copy; Copyright <strong style="color: var(--text-main);">Berto Juni</strong>. All Rights Reserved.
       </div>
     </div>
   </footer>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center" style="background: var(--gradient-primary);"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- ======= END ======= -->
 
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center" style="background: var(--primary);"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -696,7 +768,9 @@
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
+  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
+<!--============================= END CONTENT =============================-->
 </html>
